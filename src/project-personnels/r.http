@@ -8,5 +8,5 @@ Content-Type: application/json
 {
     "UserId":"023",
     "ProjectId":"001",
-    "Personneltype":"developer"
+    "Personneltype":"tester"
 }

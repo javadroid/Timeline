@@ -1,4 +1,5 @@
-import { Controller, Post, Body, Get, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param ,Delete} from '@nestjs/common';
+import { CreateProjectPersonnel } from './dto/CreateProjectPersonnel.dto';
 import { ProjectPersonnelsService } from './project-personnels.service';
 
 @Controller('project-personnels')
@@ -15,8 +16,8 @@ export class ProjectPersonnelsController {
     //  return {id: generatedId};
     // }
     @Get(':personnelId')
-    async getProjectPersonnelsById(@Param('personnelId') personnelId: string) {
-      return this.projectPersonnelsService.getProjectPersonnelsById(personnelId);
+    async findOne(@Param('personnelId') personnelId: string) {
+      return this.projectPersonnelsService.findOne(personnelId);
     }
 
     @Get()
@@ -25,16 +26,17 @@ export class ProjectPersonnelsController {
     }
 
     @Post()
-    async createProjectPersonnels(@Body() createDto: CreateDto){
+    async createProjectPersonnels(@Body() createDto: CreateProjectPersonnel){
         await this.projectPersonnelsService.createProjectPersonnels(createDto.ProjectId,createDto.UserId,createDto.Personneltype)
     }
-  
 
+   
+    
+    @Delete(':personnelId')
+    async delete(@Param('personnelId') id: string) {
+      return this.projectPersonnelsService.delete(id);
+    }
 }
-interface  CreateDto {
-    personnelId: string,
-    ProjectId: string,
-    UserId: string,
-    Personneltype: string,
-}
+
+
 

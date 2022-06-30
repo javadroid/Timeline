@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
 import { Personnel } from './project-personnel.model';
-import { ProjectPersonnels, ProjectPersonnelsDoc } from './project-personnels.schema';
+import { ProjectPersonnels, ProjectPersonnelsDoc } from './schema/project-personnels.schema';
 
 @Injectable()
 export class ProjectPersonnelsService {
@@ -27,15 +27,25 @@ export class ProjectPersonnelsService {
             return this.projectPersonnelsModel.find().exec();
         }
 
-        async getProjectPersonnelsById(personnelId: string) {
+        async findOne(personnelId: string) {
             return this.projectPersonnelsModel.findById({ personnelId })
         }
 
+        async findAll() {
+            return this.projectPersonnelsModel.find().exec();
+          }
+        
+        
+        
+          async delete(personnelId: string) {
+            const deleted = await this.projectPersonnelsModel
+              .findByIdAndRemove({ personnelId })
+              .exec();
+            return deleted;
+          }
+
 }
 
-// async create(createCatDto: CreateCatDto): Promise<Cat> {
-//     const createdCat = await this.catModel.create(createCatDto);
-//     return createdCat;
-//   }
+
 
 
