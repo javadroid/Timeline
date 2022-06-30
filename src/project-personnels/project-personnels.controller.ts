@@ -1,5 +1,7 @@
+
 import { Controller, Post, Body, Get, Param ,Delete} from '@nestjs/common';
 import { CreateProjectPersonnel } from './dto/CreateProjectPersonnel.dto';
+
 import { ProjectPersonnelsService } from './project-personnels.service';
 
 @Controller('project-personnels')
@@ -30,12 +32,11 @@ export class ProjectPersonnelsController {
         await this.projectPersonnelsService.createProjectPersonnels(createDto.ProjectId,createDto.UserId,createDto.Personneltype)
     }
 
-   
-    
     @Delete(':personnelId')
     async delete(@Param('personnelId') id: string) {
       return this.projectPersonnelsService.delete(id);
     }
+
 }
 
 
