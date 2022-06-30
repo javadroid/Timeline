@@ -1,6 +1,7 @@
 
-import { Controller, Post, Body, Get, Param ,Delete} from '@nestjs/common';
+import { Controller, Post, Body, Get, Param ,Delete, Patch} from '@nestjs/common';
 import { CreateProjectPersonnel } from './dto/CreateProjectPersonnel.dto';
+import { UpdateProjectPersonnel } from './dto/UpdateProjectPersonnel.dto';
 
 import { ProjectPersonnelsService } from './project-personnels.service';
 
@@ -17,24 +18,31 @@ export class ProjectPersonnelsController {
     //  const generatedId = this.projectPersonnelsService.insertProjectPersonnelsModule(project, user, personnel);
     //  return {id: generatedId};
     // }
-    @Get(':personnelId')
+    @Get('/:personnelId')
     async findOne(@Param('personnelId') personnelId: string) {
+      
       return this.projectPersonnelsService.findOne(personnelId);
     }
 
     @Get()
-    async getProjectPersonnels() {
-        return this.projectPersonnelsService.getProjectPersonnels()
+    async findAll() {
+        return this.projectPersonnelsService.findAll()
     }
 
     @Post()
-    async createProjectPersonnels(@Body() createDto: CreateProjectPersonnel){
-        await this.projectPersonnelsService.createProjectPersonnels(createDto.ProjectId,createDto.UserId,createDto.Personneltype)
+    async create(@Body() createDto: CreateProjectPersonnel){
+      
+        return this.projectPersonnelsService.create(createDto.ProjectId,createDto.UserId,createDto.Personneltype)
     }
 
-    @Delete(':personnelId')
+    @Delete('/:personnelId')
     async delete(@Param('personnelId') id: string) {
       return this.projectPersonnelsService.delete(id);
+    }
+
+    @Patch(':userId')
+    async updateUser(@Param('userId') userId: string, @Body() updated: UpdateProjectPersonnel) {
+        return this.projectPersonnelsService.update(userId, updated);
     }
 
 }
