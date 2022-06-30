@@ -19,4 +19,11 @@ DELETE http://localhost:3000/project-personnels/43
 GET http://localhost:3000/project-personnels/60
 
 ###
-PATCH http://localhost:3000/project-personnels/
+PATCH http://localhost:3000/project-personnels/43
+Content-Type: application/json
+
+{
+    "UserId":"023",
+    "ProjectId":"011",
+    "Personneltype":"lerad"
+}
