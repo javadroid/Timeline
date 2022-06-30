@@ -7,12 +7,13 @@ import { UsersModule } from './users/users.module';
 import { ActivityModule } from './activity/activity.module';
 import { ActivityAssignmentModule } from './activity-assignment/activity-assignment.module';
 import { LogModule } from './log/log.module';
-import { ActivityAssignmentController } from './activity-assignment/activity-assignment.controller';
-import { ActivityAssignmentService } from './activity-assignment/activity-assignment.service';
+
+import { MongooseModule } from '@nestjs/mongoose';
+
 
 @Module({
-  imports: [ProjectModule, ProjectPersonnelsModule, UsersModule, ActivityModule, ActivityAssignmentModule, LogModule],
-  controllers: [AppController, ActivityAssignmentController],
-  providers: [AppService, ActivityAssignmentService],
+  imports: [MongooseModule.forRoot('mongodb://localhost/Timeline',),ProjectModule, ProjectPersonnelsModule, UsersModule, ActivityModule, ActivityAssignmentModule, LogModule],
+  controllers: [AppController,],
+  providers: [AppService,],
 })
 export class AppModule {}

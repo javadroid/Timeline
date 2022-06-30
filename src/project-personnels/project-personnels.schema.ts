@@ -7,6 +7,9 @@ export type ProjectPersonnelsDoc= ProjectPersonnels & Document
 @Schema()
 export class ProjectPersonnels{
     @Prop()
+    personnelId:string
+    
+    @Prop()
     UserId:string
     
     @Prop()
@@ -15,6 +18,9 @@ export class ProjectPersonnels{
     @Prop()
     Personneltype:string
 
+    
+    
+
 }
 
-export const UserProjectPersonnelsSchema=SchemaFactory.createForClass(ProjectPersonnels)
+export const ProjectPersonnelsSchema=SchemaFactory.createForClass(ProjectPersonnels)
