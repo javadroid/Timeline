@@ -7,15 +7,6 @@ import { ProjectPersonnels, ProjectPersonnelsDoc } from './schema/project-person
 
 @Injectable()
 export class ProjectPersonnelsService {
-    // personnel: Personnel[] = [];
-
-    // insertProjectPersonnelsModule(project: string, user: string, personnel: string) {
-    //     const personnelId = new Date().toString();
-    //     const newPersonnel = new Personnel(personnelId, project, user, personnel)
-    //     this.personnel.push(newPersonnel);
-    //     return personnelId;
-    // }
-    
     
     constructor(@InjectModel(ProjectPersonnels.name) private projectPersonnelsModel: Model<ProjectPersonnelsDoc>){}
     
