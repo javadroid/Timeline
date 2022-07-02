@@ -1,0 +1,47 @@
+GET http://localhost:3000/project
+
+###
+
+POST http://localhost:3000/project
+Content-Type: application/json
+
+{
+    
+    "name":"java",
+    
+    "description":"description",
+
+    "duration":2,
+
+    "stateDate":2020,
+
+    "endDate":2022,
+
+    "cost":50
+}
+
+###
+DELETE http://localhost:3000/project/62beb192797513b9b1f1f255
+
+
+###
+GET http://localhost:3000/project/62beb13a797513b9b1f1f24d
+
+###
+PATCH http://localhost:3000/project/62becac3d93062c793f4da41
+Content-Type: application/json
+
+{
+    
+    "name":"php",
+    
+    "description":"description",
+
+    "duration":2,
+
+    "stateDate":2020,
+
+    "endDate":2022,
+
+    "cost":50
+}
