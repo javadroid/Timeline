@@ -1,4 +1,3 @@
-
 import { Controller, Post, Body, Get, Param ,Delete, Patch} from '@nestjs/common';
 import { CreateProjectPersonnel } from './dto/CreateProjectPersonnel.dto';
 import { UpdateProjectPersonnel } from './dto/UpdateProjectPersonnel.dto';
@@ -22,8 +21,7 @@ export class ProjectPersonnelsController {
     }
 
     @Post()
-    async create(@Body() createDto: CreateProjectPersonnel){
-      
+    async createProjectPersonnels(@Body() createDto: CreateProjectPersonnel){
         return this.projectPersonnelsService.create(createDto.ProjectId,createDto.UserId,createDto.Personneltype)
     }
 
