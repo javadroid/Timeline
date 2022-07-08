@@ -9,9 +9,9 @@ export class ActivityAssignmentService {
 
     constructor(@InjectModel(activityassignment.name) private activityassignmentModel: Model<activityassignmentDoc>){}
     
-    async createactivityassignment(ProjectId: string, ActivityId:string,UserId: string, Dateassigned:Date, Datedone:Date){
+    async createactivityassignment(ProjectId: string, ActivityId:string,UserId: string, Dateassigned:Date, Datedone:Date, duration: number){
         const Id =  Math.floor(Math.random()*99).toString();
-        return await this.activityassignmentModel.create({ProjectId ,ActivityId,UserId,Dateassigned,Datedone})
+        return await this.activityassignmentModel.create({ProjectId ,ActivityId,UserId,Dateassigned,Datedone, duration})
 }
         async getactivityassignment() {
             return this.activityassignmentModel.find().exec();

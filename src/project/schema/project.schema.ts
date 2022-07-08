@@ -16,7 +16,7 @@ export class Project{
     duration:number
     
     @Prop()
-    stateDate:string
+    startDate:string
 
     @Prop()
     endDate:string

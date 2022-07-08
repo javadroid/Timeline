@@ -8,7 +8,7 @@ export type activityassignmentDoc=activityassignment & Document
 export class activityassignment{
    
     @Prop()
-    dId:string
+    Id:string
 
     @Prop()
     projectidId:string
@@ -24,6 +24,9 @@ export class activityassignment{
     
      @Prop()
     Datedone:Date
+
+    @Prop()
+    duration:number
     
     
 

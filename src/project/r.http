@@ -13,7 +13,7 @@ Content-Type: application/json
 
     "duration":2,
 
-    "stateDate":2020,
+    "startDate":2020,
 
     "endDate":2022,
 
@@ -39,7 +39,7 @@ Content-Type: application/json
 
     "duration":2,
 
-    "stateDate":2020,
+    "startDate":2020,
 
     "endDate":2022,
 

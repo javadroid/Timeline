@@ -6,7 +6,7 @@ export class UpdateProjectDto{
 
     duration:number
 
-    stateDate:string
+    startDate:string
 
     endDate:string
 

@@ -8,12 +8,12 @@ export type ProjectPersonnelsDoc= ProjectPersonnels & Document
 export class ProjectPersonnels{
     @Prop()
     personnelId:string
-    
-    @Prop()
-    UserId:string
-    
+
     @Prop()
     ProjectId:string
+    
+    @Prop()
+    name:string
     
     @Prop()
     Personneltype:string

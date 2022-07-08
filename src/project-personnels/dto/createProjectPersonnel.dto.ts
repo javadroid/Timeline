@@ -3,4 +3,5 @@ export class CreateProjectPersonnel{
     ProjectId: string;
     UserId: string;
     Personneltype: string;
+    name: string;
 }

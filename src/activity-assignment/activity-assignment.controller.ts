@@ -20,7 +20,7 @@ export class ActivityAssignmentController {
 
     @Post()
     async createactivityassignment(@Body() createDto: createactivityassignment){
-        await this.activityassignmentService.createactivityassignment(createDto.projectId,createDto.ActivityId,createDto.UserId, createDto.Dateassigned, createDto.Datedone)
+        await this.activityassignmentService.createactivityassignment(createDto.projectId,createDto.ActivityId,createDto.UserId, createDto.Dateassigned, createDto.Datedone, createDto.duration)
     }
 
     @Delete(':Id')

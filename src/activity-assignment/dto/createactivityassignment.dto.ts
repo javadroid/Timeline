@@ -6,4 +6,5 @@ export class createactivityassignment{
     UserId:string;
     Dateassigned:Date;
     Datedone:Date;
+    duration: number;
 }
