@@ -1,15 +1,28 @@
-GET http://localhost:3000/users
+GET http://localhost:3000/api/users
+
 
 ###
+GET http://localhost:3000/api/users/profile
 
-POST http://localhost:3000/users
+###
+POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
 "username":"javadroid",
-   "personnelType":"tead",
-   "phonenumber":5,
-   "email":"string@gmail.com",
+
+   "password":"string223@"
+}
+
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+"username":"javaddsxdsxroid232dsxsd",
+   "personnelType":"texad",
+   "phonenumber":52231023332123,
+   "email":"string@gsmxxadddsxfdssddil.csdaodm1",
    "gender":"male",
    "address":"address string",
    "image":" image string"   ,
@@ -17,23 +30,38 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/users/62beb192797513b9b1f1f255
+DELETE http://localhost:3000/api/users/62c5727d797040267eb8e655
 
+=
+###
+GET http://localhost:3000/api/users/string@ggermail.com
 
 ###
-GET http://localhost:3000/users/v
-
-###
-PATCH http://localhost:3000/users/62beccc9d93062c793f4da49
+PATCH http://localhost:3000/api/users/62c2c09acc6cef6a68cf0c68
 Content-Type: application/json
 
 {
-"username":"javadroid",
-   "personnelType":"tead",
+"username":"rf5f",
+   "personnelType":"tegread",
    "phonenumber":5,
-   "email":"string@gmail.com",
-   "gender":"male",
-   "address":"address string",
-   "image":" image string"   ,
-   "password":"string223@"
+   "email":"string@ggermail.com",
+   "gender":"mgergale",
+   "address":"addrgeress string",
+   "image":" imaggrege string"   ,
+   "password":"sterring223@"
+}
+
+###
+PUT  http://localhost:3000/api/users/62c2c09acc6cef6a68cf0c68
+Content-Type: application/json
+
+{
+"username":"javadrodfid",
+   "personnelType":"tegread",
+   "phonenumber":5322,
+   "email":"string@ggermail.com",
+   "gender":"mgergale",
+   "address":"addrgeress string",
+   "image":" imaggrege string"   ,
+   "password":"sterring223@"
 }

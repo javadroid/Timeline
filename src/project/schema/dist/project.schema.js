@@ -22,7 +22,7 @@ var Project = /** @class */ (function () {
     ], Project.prototype, "duration");
     __decorate([
         mongoose_1.Prop()
-    ], Project.prototype, "stateDate");
+    ], Project.prototype, "startDate");
     __decorate([
         mongoose_1.Prop()
     ], Project.prototype, "endDate");

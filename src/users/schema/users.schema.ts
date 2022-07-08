@@ -1,4 +1,4 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { MongooseModule, Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
 import { type } from "os";
 
@@ -6,18 +6,20 @@ export type UsersDoc= Users & Document
 
 @Schema()
 export class Users{
-    @Prop()
-    username:string
+   
+
+
+    @Prop({ unique : true, required : true })
+    username: string
     
     @Prop()
     personnelType:string
     
-    @Prop()
+    @Prop({  unique : true, required : true })
     phonenumber:number
     
-    @Prop()
+    @Prop({  unique : true, required : true })
     email:string
-
     @Prop()
     gender:string
     
@@ -30,9 +32,16 @@ export class Users{
     @Prop()
     password:string
 
-    
-    
-
 }
+MongooseModule.forFeatureAsync([
+    {
+      name: Users.name,
+      useFactory: () => {
+        const schema = UsersSchema;
+        schema.plugin(require('mongoose-unique-validator'), { message: 'your custom message' }); // or you can integrate it without the options   schema.plugin(require('mongoose-unique-validator')
+        return schema;
+      },
+    },
+  ])
 
 export const UsersSchema=SchemaFactory.createForClass(Users)

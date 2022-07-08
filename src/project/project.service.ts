@@ -12,11 +12,11 @@ export class ProjectService {
         name:string,
         description:string,
         duration:number,
-        stateDate:string,
+        startDate:string,
         endDate:string,
         cost:number
      ){
-        return await this.projectModel.create({name, description,duration,stateDate,endDate,cost})
+        return await this.projectModel.create({name, description,duration,startDate,endDate,cost})
     }
 
     //Model to update a project.. to be called in the controller

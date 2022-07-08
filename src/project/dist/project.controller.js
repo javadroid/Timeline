@@ -54,7 +54,7 @@ var ProjectController = /** @class */ (function () {
     ProjectController.prototype.create = function (createDto) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.projectService.create(createDto.name, createDto.description, createDto.duration, createDto.stateDate, createDto.endDate, createDto.cost)];
+                return [2 /*return*/, this.projectService.create(createDto.name, createDto.description, createDto.duration, createDto.startDate, createDto.endDate, createDto.cost)];
             });
         });
     };

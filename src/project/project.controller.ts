@@ -9,7 +9,7 @@ export class ProjectController {
 
     @Post()
     async create(@Body()createDto:CreateProjectDto){
-        return this.projectService.create( createDto.name,createDto.description,createDto.duration,createDto.stateDate,createDto.endDate,createDto.cost)
+        return this.projectService.create( createDto.name,createDto.description,createDto.duration,createDto.startDate,createDto.endDate,createDto.cost)
     }
 
     @Patch(':_id')
@@ -27,6 +27,7 @@ export class ProjectController {
       
         return this.projectService.findOne(_id);
       }
+      
 
     @Delete('/:_id')
     async delete(@Param('_id') _id: string) {

@@ -6,7 +6,7 @@ export class CreateProjectDto{
 
     duration:number
 
-    stateDate:string
+    startDate:string
 
     endDate:string
 

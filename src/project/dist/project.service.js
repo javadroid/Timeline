@@ -54,11 +54,11 @@ var ProjectService = /** @class */ (function () {
         this.projectModel = projectModel;
     }
     //Model to create a project... to be called in the controller
-    ProjectService.prototype.create = function (name, description, duration, stateDate, endDate, cost) {
+    ProjectService.prototype.create = function (name, description, duration, startDate, endDate, cost) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.projectModel.create({ name: name, description: description, duration: duration, stateDate: stateDate, endDate: endDate, cost: cost })];
+                    case 0: return [4 /*yield*/, this.projectModel.create({ name: name, description: description, duration: duration, startDate: startDate, endDate: endDate, cost: cost })];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
