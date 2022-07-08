@@ -22,7 +22,7 @@ export class ProjectPersonnelsController {
 
     @Post()
     async createProjectPersonnels(@Body() createDto: CreateProjectPersonnel){
-        return this.projectPersonnelsService.create(createDto.ProjectId,createDto.UserId,createDto.Personneltype)
+        return this.projectPersonnelsService.create(createDto.ProjectId,createDto.Personneltype,createDto.name)
     }
 
     @Delete('/:personnelId')

@@ -8,9 +8,9 @@ import { ProjectPersonnels, ProjectPersonnelsDoc } from './schema/project-person
 export class ProjectPersonnelsService {
     constructor(@InjectModel(ProjectPersonnels.name) private projectPersonnelsModel: Model<ProjectPersonnelsDoc>){}
     
-    async create(ProjectId: string, UserId: string, Personneltype: string){
+    async create(ProjectId: string, Personneltype: string, name: string){
         const personnelId =  Math.floor(Math.random()*99).toString();
-        return await this.projectPersonnelsModel.create({personnelId,UserId,ProjectId,Personneltype})
+        return await this.projectPersonnelsModel.create({personnelId,ProjectId,Personneltype,name})
 }
        
 
