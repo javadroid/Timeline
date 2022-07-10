@@ -1,11 +1,12 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Req, Request, Res, UseGuards } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+
 import { CreateUsersDto } from './dto/createUsersDto.dto';
 import { UpdateUsersDto } from './dto/updateUser.dto';
 import { LocalAuthGuards } from './local-auth-guards';
 import { Request as R,Response as Rp } from "express";
 import { UsersService } from './users.service';
 import * as bcrypt from 'bcrypt'
+import { AuthGuard } from './auth.guard';
 @Controller('users')
 export class UsersController {
     constructor(private userService:UsersService){}
@@ -59,18 +60,18 @@ export class UsersController {
     @Post('login')
     async login(@Request() req, @Res({passthrough:true}) res:Rp){
     const token=await this.userService.getJwt(req.user);
-    res.cookie('auth-cookie',token,{httpOnly:true})
+  //  res.cookie('auth-cookie',token,{httpOnly:true})
 
       return {authenticated:true,username:req.user[0].username}
 }
 
 
-// @UseGuards(AuthGuard('jwt'))
+ @UseGuards(AuthGuard)
 @Get('profile')
 async getprfile(@Request() req ,rep:R){
     
-  const token=await this.userService.checkJwt(req.user);
-  return token
+ console.log(req.user)
+  return  req.user
 }
 
 @Get('signout')
