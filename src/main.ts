@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ArgumentOutOfRangeError } from 'rxjs';
 import { AppModule } from './app.module';
-import * as session from 'express-session'
+ import * as session from 'express-session'
 import * as passport from 'passport'
 
 async function bootstrap() {

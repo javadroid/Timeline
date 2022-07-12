@@ -2,21 +2,25 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Req, Request, R
 
 import { CreateUsersDto } from './dto/createUsersDto.dto';
 import { UpdateUsersDto } from './dto/updateUser.dto';
-import { LocalAuthGuards } from './local-auth-guards';
+import { LocalAuthGuards } from './stratages/local-auth-guards';
 import { Request as R,Response as Rp } from "express";
-import { UsersService } from './users.service';
+
 import * as bcrypt from 'bcrypt'
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from '@nestjs/passport';
+import { UserService } from './user/user.service';
+import { AuthService } from './auth/auth.service';
+import { Jwtlocal } from './stratages/jwtlocal';
+// import { AuthGuard } from './auth.guard';
 @Controller('users')
 export class UsersController {
-    constructor(private userService:UsersService){}
+    constructor(private userService:UserService,private authService: AuthService){}
 
     @Post()
-    async create(@Body()createDto:CreateUsersDto,@Request() req , @Res({passthrough:true}) res:Rp){
+    async create(@Body()createDto:CreateUsersDto,@Request() req , @Res({passthrough:true}) res:Rp,){
         const passHash=await bcrypt.hash(createDto.password, 12)
          this.userService.create(createDto.username,createDto.personnelType,createDto.phonenumber,createDto.email,createDto.gender,createDto.address,createDto.image,createDto.password)
         
-         const token=  await this.userService.getJwt(createDto);
+         const token=  await this.authService.getJwt(createDto);
          res.cookie('auth-cookie',token,{httpOnly:true})
 
       return {authenticated:true,username:createDto.username}
@@ -59,14 +63,14 @@ export class UsersController {
     @UseGuards(LocalAuthGuards)
     @Post('login')
     async login(@Request() req, @Res({passthrough:true}) res:Rp){
-    const token=await this.userService.getJwt(req.user);
+    const token=await this.authService.getJwt(req.user);
   //  res.cookie('auth-cookie',token,{httpOnly:true})
 
-      return {authenticated:true,username:req.user[0].username}
+      return {authenticated:true,username:req.user[0].username ,token}
 }
 
 
- @UseGuards(AuthGuard)
+ @UseGuards(Jwtlocal)
 @Get('profile')
 async getprfile(@Request() req ,rep:R){
     
