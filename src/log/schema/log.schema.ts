@@ -6,39 +6,40 @@ export type logDoc= log & Document
 
 @Schema()
 export class log{
-    
-    @Prop()
-    projectId: string;
-    
-    @Prop()
-    ActivityId: string;
-    
-    @Prop()
-    UserId: string;
 
-    @Prop()
-    Bug: string;
 
-    @Prop()
-    ReporterId: string;
+@Prop()
+project: string;
 
-    @Prop()
-    ReportedAt: string;
+@Prop()
+activity: string;
 
-    @Prop()
-    AssignedTo: string;
+@Prop()
+user: string;
 
-    @Prop()
-    DateResolved: string;
+@Prop()
+log: string;
 
-    @Prop()
-    Response: string;
+@Prop()
+reporterId: string;
 
-    @Prop()
-    ResponseConfirm: string;
+@Prop()
+reportedAt: string;
 
-    @Prop()
-    ResponseConfirmDate: string;
+@Prop()
+assignedTo: string;
+
+@Prop()
+dateResolved: string;
+
+@Prop()
+response: string;
+
+@Prop()
+responseConfirm: string;
+
+@Prop()
+responseConfirmDate: string;
 }
 
 export const logSchema=SchemaFactory.createForClass(log)

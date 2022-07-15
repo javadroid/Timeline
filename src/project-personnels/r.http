@@ -1,18 +1,19 @@
-GET http://localhost:3000/project-personnels
+GET http://localhost:3000/api/activityassignment
 
 ###
 
-POST http://localhost:3000/project-personnels
+POST http://localhost:3000/api/activityassignment
 Content-Type: application/json
 
 {
-    "UserId":"023",
-    "ProjectId":"011",
-    "Personneltype":"lerad"
+"user":"string",
+"activity":"string",
+"user":"string",
+"duration": 3
 }
 
 ###
-DELETE http://localhost:3000/project-personnels/43
+DELETE http://localhost:3000/api/log/62cebe71df0e193c5aa299bf
 
 
 ###

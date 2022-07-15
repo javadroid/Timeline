@@ -21,7 +21,7 @@ export class Stratage2 extends PassportStrategy(Strategy){
 
     async validate(payload:any){
         // const user=await this.userService.findOne1(payload.username)
-        const user={username:payload.username, email:payload.email}
+        const user={authenticated:true,username:payload.username, email:payload.email}
        
         if(!user){
             throw new HttpException('invalid ',HttpStatus.UNAUTHORIZED)

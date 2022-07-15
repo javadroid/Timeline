@@ -6,14 +6,7 @@ export type ProjectPersonnelsDoc= ProjectPersonnels & Document
 
 @Schema()
 export class ProjectPersonnels{
-    @Prop()
-    personnelId:string
-
-    @Prop()
-    ProjectId:string
-    
-    @Prop()
-    name:string
+  
     
     @Prop()
     Personneltype:string

@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { CreateProjectPersonnel } from './dto/CreateProjectPersonnel.dto';
 import { UpdateProjectPersonnel } from './dto/updateProjectPersonnel.dto';
 import { ProjectPersonnels, ProjectPersonnelsDoc } from './schema/project-personnels.schema';
 
@@ -8,9 +9,9 @@ import { ProjectPersonnels, ProjectPersonnelsDoc } from './schema/project-person
 export class ProjectPersonnelsService {
     constructor(@InjectModel(ProjectPersonnels.name) private projectPersonnelsModel: Model<ProjectPersonnelsDoc>){}
     
-    async create(ProjectId: string, Personneltype: string, name: string){
+    async create(createDto: CreateProjectPersonnel){
         const personnelId =  Math.floor(Math.random()*99).toString();
-        return await this.projectPersonnelsModel.create({personnelId,ProjectId,Personneltype,name})
+        return await this.projectPersonnelsModel.create(createDto)
 }
        
 

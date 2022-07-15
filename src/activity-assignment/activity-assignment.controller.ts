@@ -6,26 +6,26 @@ import { createactivityassignment } from './dto/createactivityassignment.dto';
 
 @Controller('activityassignment')
 export class ActivityAssignmentController {
-    constructor(private  activityassignmentService: ActivityAssignmentService){}
+    constructor(private  http: ActivityAssignmentService){}
 
     @Get('Id')
     async findOne(@Param('Id') Id: string) {
-      return this.activityassignmentService.findOne(Id);
+      return this.http.findOne(Id);
     }
 
     @Get()
     async getactivityassignment() {
-        return this.activityassignmentService.getactivityassignment()
+        return this.http.getactivityassignment()
     }
 
     @Post()
     async createactivityassignment(@Body() createDto: createactivityassignment){
-        await this.activityassignmentService.createactivityassignment(createDto.projectId,createDto.ActivityId,createDto.UserId, createDto.Dateassigned, createDto.Datedone, createDto.duration)
+        await this.http.createactivityassignment(createDto)
     }
 
     @Delete(':Id')
     async delete(@Param('Id') Id: string) {
-      return this.activityassignmentService.delete(Id);
+      return this.http.delete(Id);
     }
 
 }

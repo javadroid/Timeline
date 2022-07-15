@@ -8,26 +8,17 @@ export type activityassignmentDoc=activityassignment & Document
 export class activityassignment{
    
     @Prop()
-    Id:string
-
+    project:string;
     @Prop()
-    projectidId:string
-
+    activity:string;
     @Prop()
-    ActivityId:string
-    
+    user:string;
     @Prop()
-    userId:string
-    
+    dateAssigned:Date;
     @Prop()
-    Dateassigned:Date
-    
-     @Prop()
-    Datedone:Date
-
+    dateDone:Date;
     @Prop()
-    duration:number
-    
+    duration: number;
     
 
 }

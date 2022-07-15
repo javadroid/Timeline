@@ -1,9 +1,11 @@
 export class Createactivity{
 
-    id:string;
-    Name:string;
-    Description:string;
-    Duration:number;
-    Startdate: Date;
-    Enddate:Date;
+
+    name:string
+    description:string
+    duration:string
+    startDate:string
+    endDate:string
+
+   
 }

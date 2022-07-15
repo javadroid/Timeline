@@ -21,10 +21,7 @@ export class LogController {
 
     @Post()
     async create(@Body() createDto: CreateLogs){
-        return this.logService.create(createDto.projectId,createDto.ActivityId,createDto.UserId,
-            createDto.Bug,createDto.ReporterId,
-            createDto.ReportedAt,createDto.AssignedTo,createDto.DateResolved,createDto.Response,
-            createDto.ResponseConfirm,createDto.ResponseConfirmDate)
+        return this.logService.create(createDto)
 
 
    

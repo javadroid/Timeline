@@ -5,23 +5,21 @@ export type ActivityDoc= Activity & Document
 
 @Schema()
 export class Activity{
-    @Prop()
-    Id:string
-    
+       
     @Prop()
     name:string
     
     @Prop()
-    Description:string
+    description:string
     
     @Prop()
-    Duration:string
+    duration:string
     
     @Prop()
-    Startdate:string
+    startDate:string
 
     @Prop()
-    Enddate:string
+    endDate:string
 
 
   

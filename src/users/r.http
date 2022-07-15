@@ -20,10 +20,10 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-"username":"javaddsxdsxroid232dsxsd",
+"username":"javadddsdssxdsxroid232dsxsd",
    "personnelType":"texad",
-   "phonenumber":52231023332123,
-   "email":"string@gsmxxadddsxfdssddil.csdaodm1",
+   "phonenumber":522312023332123,
+   "email":"string@wgsmxxadddsxfdssddil.csdaodm1",
    "gender":"male",
    "address":"address string",
    "image":" image string"   ,

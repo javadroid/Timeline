@@ -1,6 +1,7 @@
 import { Injectable,  } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, StringExpressionOperatorReturningObject } from 'mongoose';
+import { CreateLogs } from './dto/createlog.dto';
 
 
 import { Logs } from './log.model'; 
@@ -13,9 +14,8 @@ export class LogService {
     
     constructor(@InjectModel(log.name) private logsModel: Model<logDoc>){}
     
-    async create(projectId: string, ActivityId: string, UserId: string, Bug: string, ReporterId: string, ReportedAt: string, AssignedTo: string, DateResolved: string,
-        Response: string, ResponseConfirm: string, ResponseConfirmDate: string){
-        return this.logsModel.create({projectId,ActivityId,UserId,Bug,ReporterId,ReportedAt,AssignedTo,DateResolved,Response,ResponseConfirm,ResponseConfirmDate})
+    async create(createDto:CreateLogs){
+        return this.logsModel.create(createDto)
 }
         async getlogs() {
             return this.logsModel.find().exec();

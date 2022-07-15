@@ -7,14 +7,14 @@ import { UserModule } from '../user/user.module';
 import { jwtConstants } from './auth.constant';
 import { AuthService } from './auth.service';
 
-
+  
 @Module({
     imports: [
       UserModule,
-      PassportModule,
+      PassportModule.register({session:true}),
       JwtModule.register({
         secret:jwtConstants.secret,
-        signOptions: { expiresIn: '60s' },
+        signOptions: { expiresIn: '24h' },
       }),
     ],
     providers: [AuthService, Stratage, Stratage2],

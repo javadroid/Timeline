@@ -19,7 +19,7 @@ export class ActivityController {
 
     @Post()
     async create(@Body() createDto: Createactivity){
-        return this.activityService.create(createDto.id,createDto.Name,createDto.Description, createDto.Duration, createDto.Startdate,createDto.Enddate)
+        return this.activityService.create(createDto)
     }
 
     @Delete(':Id')

@@ -1,10 +1,9 @@
 
 export class createactivityassignment{
-    Id:string;
-    projectId:string;
-    ActivityId:string;
-    UserId:string;
-    Dateassigned:Date;
-    Datedone:Date;
+    project:string;
+    activity:string;
+    user:string;
+    dateAssigned:Date;
+    dateDone:Date;
     duration: number;
 }
