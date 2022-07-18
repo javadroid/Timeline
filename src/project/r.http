@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/project
+GET http://localhost:3000/api/activity
 
 ###
 
@@ -14,7 +14,6 @@ Content-Type: application/json
     "duration":2,
 
     "startDate":2020,
-
     "endDate":2022,
 
     "cost":50
@@ -22,26 +21,18 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/api/project/62c417aba9387fc661bcc44c
-
+62d18ddce1d72b7d69c59ae6
+62d192e9e1d72b7d69c59b1e
+###
+GET http://localhost:3000/api/activity/p/62d18dffe1d72b7d69c59ae9
 
 ###
-GET http://localhost:3000/project/62beb13a797513b9b1f1f24d
+GET http://localhost:3000/api/activity/p/api
 
 ###
-PATCH http://localhost:3000/project/62becac3d93062c793f4da41
+PATCH http://localhost:3000/api/activity/62d18ed4e1d72b7d69c59b06
 Content-Type: application/json
 
 {
-    
-    "name":"php",
-    
-    "description":"description",
-
-    "duration":2,
-
-    "startDate":2020,
-
-    "endDate":2022,
-
-    "cost":50
+    "project":"Timeline"
 }

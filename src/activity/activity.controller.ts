@@ -1,5 +1,5 @@
 
-import { Controller, Post, Body, Get, Param ,Delete} from '@nestjs/common';
+import { Controller, Post, Body, Get, Param ,Delete, Patch} from '@nestjs/common';
 import { ActivityService } from './activity.service';
 import { Createactivity } from './dto/createactivity.dto';
 
@@ -10,6 +10,21 @@ export class ActivityController {
     @Get('Id')
     async findOne(@Param('Id') Id: string) {
       return this.activityService.findOne(Id);
+    }
+
+    @Get('p/:Id')
+    async findOneP(@Param('Id') Id: string) {
+      return this.activityService.findOneP(Id);
+    }
+
+    @Get('p/:_id/:project')
+    async findOnePid(@Param('_id') Id: string, @Param('project') p: string) {
+      return this.activityService.findOnePid(Id,p);
+    }
+
+    @Patch(':_id')
+    async update(@Param('_id') _Id: string, @Body() createDto: Createactivity) {
+        return this.activityService.update(_Id, createDto);
     }
 
     @Get()

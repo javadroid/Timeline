@@ -27,10 +27,9 @@ export class ProjectService {
         }
         return check
     }
-
     //Model to find a project... to be called in the controller
     async findOne(_Id:string){
-        const check=this.projectModel.find({_id:Object(_Id)}).exec()
+        const check=this.projectModel.find({_id:_Id}).exec()
         if(!check){
              throw new NotFoundException('project not found')
         }

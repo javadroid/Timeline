@@ -8,6 +8,9 @@ export class Activity{
        
     @Prop()
     name:string
+
+    @Prop()
+    project:string
     
     @Prop()
     description:string

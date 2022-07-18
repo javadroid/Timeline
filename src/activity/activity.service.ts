@@ -22,6 +22,13 @@ export class ActivityService {
         async findOne(Id: string) {
             return this.activity.findById({ Id })
         }
+        async findOneP(Id: string) {
+          return this.activity.find({ project:Object(Id)})
+      }
+
+      async findOnePid(Id: string,project:string) {
+        return this.activity.findOne({ _id:Object(Id),project:Object(project)})
+    }
 
         async findAll() {
             return this.activity.find().exec();
@@ -35,4 +42,10 @@ export class ActivityService {
               .exec();
             return deleted;
           }
+
+          //Model to update a user.. to be called in the controller
+async update(_id:string , createDto:Createactivity){
+  return this.activity.findByIdAndUpdate({_id},createDto)
+ 
+}
 }

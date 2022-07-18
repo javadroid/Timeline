@@ -1,4 +1,5 @@
-GET http://localhost:3000/api/activityassignment
+
+GET http://localhost:3000/api/project
 
 ###
 
@@ -17,7 +18,7 @@ DELETE http://localhost:3000/api/log/62cebe71df0e193c5aa299bf
 
 
 ###
-GET http://localhost:3000/project-personnels/60
+GET http://localhost:3000/project-personnels/
 
 ###
 PATCH http://localhost:3000/project-personnels/43

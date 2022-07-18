@@ -11,7 +11,7 @@ export class activityassignment{
     project:string;
     @Prop()
     activity:string;
-    @Prop()
+    @Prop() 
     user:string;
     @Prop()
     dateAssigned:Date;
