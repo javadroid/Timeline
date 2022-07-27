@@ -10,6 +10,9 @@ export class Project{
     name:string
     
     @Prop()
+    user:string
+    
+    @Prop()
     description:string
     
     @Prop()
@@ -23,6 +26,9 @@ export class Project{
     
     @Prop()
     cost:number
+
+    @Prop()
+    progress:number
     
 }
 

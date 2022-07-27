@@ -19,16 +19,20 @@ export class ActivityService {
             return this.activity.find().exec();
         }
 
-        async findOne(Id: string) {
+        async find(Id: string) {
             return this.activity.findById({ Id })
         }
         async findOneP(Id: string) {
           return this.activity.find({ project:Object(Id)})
       }
 
-      async findOnePid(Id: string,project:string) {
-        return this.activity.findOne({ _id:Object(Id),project:Object(project)})
-    }
+    //   async findOnePid(Id: string,project:string) {
+    //     return this.activity.findOne({ _id:Object(Id),project:Object(project)})
+    // }
+
+    async findOne(Id: string) {
+      return this.activity.find({ _id:Id})
+  }
 
         async findAll() {
             return this.activity.find().exec();

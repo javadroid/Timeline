@@ -17,10 +17,10 @@ export class ActivityController {
       return this.activityService.findOneP(Id);
     }
 
-    @Get('p/:_id/:project')
-    async findOnePid(@Param('_id') Id: string, @Param('project') p: string) {
-      return this.activityService.findOnePid(Id,p);
-    }
+    // @Get('p/:_id/:project')
+    // async findOnePid(@Param('_id') Id: string, @Param('project') p: string) {
+    //   return this.activityService.findOnePid(Id,p);
+    // }
 
     @Patch(':_id')
     async update(@Param('_id') _Id: string, @Body() createDto: Createactivity) {

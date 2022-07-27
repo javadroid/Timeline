@@ -23,8 +23,9 @@ export class Activity{
 
     @Prop()
     endDate:string
-
-
+    
+    @Prop()
+    progress:number
   
 
   }

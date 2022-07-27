@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param ,Delete} from '@nestjs/common';
+import { Controller, Post, Body, Get, Param ,Delete, Patch} from '@nestjs/common';
 import { ActivityAssignmentService } from './activity-assignment.service';
 
 import { createactivityassignment } from './dto/createactivityassignment.dto';
@@ -8,10 +8,15 @@ import { createactivityassignment } from './dto/createactivityassignment.dto';
 export class ActivityAssignmentController {
     constructor(private  http: ActivityAssignmentService){}
 
-    @Get('Id')
+    @Get(':Id')
     async findOne(@Param('Id') Id: string) {
       return this.http.findOne(Id);
     }
+    @Get('activity/:activity')
+    async findActivityAssign(@Param('activity') Id: string) {
+      return this.http.findActivityAssign(Id);
+    }
+
 
     @Get()
     async getactivityassignment() {
@@ -26,6 +31,12 @@ export class ActivityAssignmentController {
     @Delete(':Id')
     async delete(@Param('Id') Id: string) {
       return this.http.delete(Id);
+    }
+
+    
+    @Patch(':_id')
+    async update(@Param('_id') _Id: string, @Body() updated: createactivityassignment) {
+        return this.http.update(_Id, updated);
     }
 
 }

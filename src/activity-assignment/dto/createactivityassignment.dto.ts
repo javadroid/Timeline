@@ -6,4 +6,5 @@ export class createactivityassignment{
     dateAssigned:Date;
     dateDone:Date;
     duration: number;
+    progress:number
 }

@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/activity
+GET http://localhost:3000/api/project
 
 ###
 
@@ -14,25 +14,27 @@ Content-Type: application/json
     "duration":2,
 
     "startDate":2020,
-    "endDate":2022,
 
-    "cost":50
+    "endDate":2022,
+"user":"62dab189ec9c6a00f613ab2f",
+    "cost":50,
+    "progress":10
 }
 
 ###
-DELETE http://localhost:3000/api/project/62c417aba9387fc661bcc44c
+DELETE http://localhost:3000/api/project/62db166099170a62e5579986
 62d18ddce1d72b7d69c59ae6
 62d192e9e1d72b7d69c59b1e
 ###
 GET http://localhost:3000/api/activity/p/62d18dffe1d72b7d69c59ae9
 
 ###
-GET http://localhost:3000/api/activity/p/api
+GET http://localhost:3000/api/activity/p/62db4e9f301bf6efa674d1c1
 
 ###
-PATCH http://localhost:3000/api/activity/62d18ed4e1d72b7d69c59b06
+PATCH http://localhost:3000/api/project/62ddd9a990a1396d287d4396
 Content-Type: application/json
 
 {
-    "project":"Timeline"
+    "progress":0
 }

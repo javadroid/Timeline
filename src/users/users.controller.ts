@@ -24,6 +24,8 @@ import { UserService } from './user/user.service';
 import { AuthService } from './auth/auth.service';
 import { Jwtlocal } from './stratages/jwtlocal';
 import { AuthGuard } from './auth.guard';
+import { Roles } from './roles/role.decoration';
+import { Role } from './roles/role.enum';
 @Controller('users')
 export class UsersController {
   constructor(
@@ -70,6 +72,7 @@ export class UsersController {
     return this.userService.findOne(email);
   }
   @Get('username/:username')
+  @Roles(Role.ADMIN)
   async findByUser(@Param('username') username: string) {
     return this.userService.findOne1(username);
   }
@@ -78,7 +81,14 @@ export class UsersController {
     return this.userService.findOne2(phonenumber);
   }
 
+  @Get('id/:_id')
+  async findById(@Param('_id') _id: string) {
+    return this.userService.findById(_id);
+   }
+
+
   @Delete(':_id')
+
   async delete(@Param('_id') _id: string) {
     return this.userService.delete(_id);
   }
@@ -95,7 +105,10 @@ export class UsersController {
   @UseGuards(Jwtlocal)
   @Get('profile')
   async getprfile(@Request() req, rep: R) {
-    return req.user;
+    if(req.user){
+      return req.user;
+    } return  { authenticated: false };
+   
   }
 
   @Get('signout')

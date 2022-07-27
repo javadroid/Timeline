@@ -7,6 +7,7 @@ export class Createactivity{
     duration:string
     startDate:string
     endDate:string
+    progress:number
 
    
 }

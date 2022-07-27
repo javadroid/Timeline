@@ -32,6 +32,10 @@ export class Users{
     @Prop()
     password:string
 
+    
+    @Prop()
+    roles:string[]
+
 }
 MongooseModule.forFeatureAsync([
     {

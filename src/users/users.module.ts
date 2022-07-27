@@ -6,6 +6,8 @@ import { SessionSerialise } from './session.serialise';
 
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { APP_GUARD } from '@nestjs/core';
+import { RoleGuard } from './roles/role.guard';
 
 
 @Module({
@@ -13,7 +15,7 @@ import { AuthModule } from './auth/auth.module';
 
   
   controllers: [UsersController],
-  providers: [SessionSerialise],
+  providers: [SessionSerialise,{provide:APP_GUARD,useClass:RoleGuard}],
   // 
 })
 export class UsersModule {}

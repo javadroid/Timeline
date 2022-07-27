@@ -47,6 +47,12 @@ async findOne1(_Id:string):Promise<any>{
 
     return check
 }
+
+async findById(_id:string):Promise<any>{
+    const check=this.userModel.findOne({_id}).exec()
+
+    return check
+}
 async findOne2(_Id:string):Promise<any>{
     const check=this.userModel.find({phonenumber:Object(_Id)}).exec()
 

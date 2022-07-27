@@ -19,6 +19,8 @@ export class activityassignment{
     dateDone:Date;
     @Prop()
     duration: number;
+    @Prop()
+    progress:number
     
 
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { createactivityassignment } from './dto/createactivityassignment.dto';
@@ -19,11 +19,14 @@ export class ActivityAssignmentService {
         }
 
         async findOne(Id: string) {
-            return this.activityassignmentModel.findById({ Id })
+            return this.activityassignmentModel.findOne({ _id:Id }).exec()
         }
 
         async findAll() {
             return this.activityassignmentModel.find().exec();
+          }
+          async findActivityAssign(Id: string) {
+            return this.activityassignmentModel.find({activity:Object(Id)}).exec();
           }
         
         
@@ -34,6 +37,15 @@ export class ActivityAssignmentService {
               .exec();
             return deleted;
           }
+
+            //Model to update a project.. to be called in the controller
+    async update(_id:string , updated: createactivityassignment){
+      const check=this.activityassignmentModel.findByIdAndUpdate({_id},updated)
+      if(!check){
+           throw new NotFoundException('project not found')
+      }
+      return check
+  }
 
 
 
