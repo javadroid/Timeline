@@ -5,6 +5,7 @@ import { ActivityAssignmentService } from './activity-assignment.service';
 import { activityassignment, activityassignmentSchema } from './schema/activityassignment.schema';
 
 
+
 @Module({
 
   imports: [MongooseModule.forFeature([{name:activityassignment.name, schema:activityassignmentSchema}],)],
