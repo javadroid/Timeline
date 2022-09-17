@@ -1,6 +1,7 @@
 import { Controller, Post, Body, Get, Param ,Delete, Patch} from '@nestjs/common';
 import { CreateProjectPersonnel } from './dto/CreateProjectPersonnel.dto';
-import { UpdateProjectPersonnel } from './dto/UpdateProjectPersonnel.dto';
+import { UpdateProjectPersonnel } from './dto/updateProjectPersonnel.dto';
+
 
 import { ProjectPersonnelsService } from './project-personnels.service';
 
