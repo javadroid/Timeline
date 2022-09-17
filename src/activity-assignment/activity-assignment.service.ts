@@ -2,7 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { createactivityassignment } from './dto/createactivityassignment.dto';
-import { activityassignment, activityassignmentDoc} from './schema/activityassignment.schema';
+import { activityassignment, activityassignmentDoc } from './schema/activityassignment.schema';
+
 
 @Injectable()
 export class ActivityAssignmentService {

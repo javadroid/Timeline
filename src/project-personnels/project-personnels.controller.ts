@@ -1,5 +1,5 @@
 import { Controller, Post, Body, Get, Param ,Delete, Patch} from '@nestjs/common';
-import { CreateProjectPersonnel } from './dto/CreateProjectPersonnel.dto';
+
 import { UpdateProjectPersonnel } from './dto/updateProjectPersonnel.dto';
 
 
@@ -8,7 +8,7 @@ import { ProjectPersonnelsService } from './project-personnels.service';
 @Controller('project-personnels')
 export class ProjectPersonnelsController {
     constructor(private  projectPersonnelsService: ProjectPersonnelsService){}
-
+    
    
     @Get('/:personnelId')
     async findOne(@Param('personnelId') personnelId: string) {
@@ -22,7 +22,7 @@ export class ProjectPersonnelsController {
     }
 
     @Post()
-    async createProjectPersonnels(@Body() createDto: CreateProjectPersonnel){
+    async createProjectPersonnels(@Body() createDto: UpdateProjectPersonnel){
         return this.projectPersonnelsService.create(createDto)
     }
 
