@@ -12,7 +12,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/Timeline',),ProjectModule, ProjectPersonnelsModule, UsersModule, ActivityModule, ActivityAssignmentModule, LogModule],
+  imports: [MongooseModule.forRoot('mongodb+srv://dbzNuk:02sHBz5d5K44k8X6@cluster0.rxbwmv5.mongodb.net/Timeline',),ProjectModule, ProjectPersonnelsModule, UsersModule, ActivityModule, ActivityAssignmentModule, LogModule],
   controllers: [AppController,],
   providers: [AppService,],
 })
