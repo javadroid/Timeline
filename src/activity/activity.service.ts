@@ -31,7 +31,7 @@ export class ActivityService {
     // }
 
     async findOne(Id: string) {
-      return this.activity.find({ _id:Id})
+      return this.activity.findById({ _id:Object(Id)})
   }
 
         async findAll() {

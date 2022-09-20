@@ -7,7 +7,7 @@ import { Createactivity } from './dto/createactivity.dto';
 export class ActivityController {
     constructor(private  activityService: ActivityService){}
     
-    @Get('Id')
+    @Get(':Id')
     async findOne(@Param('Id') Id: string) {
       return this.activityService.findOne(Id);
     }

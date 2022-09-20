@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/users
+GET http://localhost:3000/api/activity/6329a40782cf79e0c52a580a
 
 
 ###
@@ -8,18 +8,18 @@ GET http://localhost:3000/api/users/email/ochigboemmanuel32@gmail.com
 GET http://localhost:3000/api/users/id/62d0b5efcad1b6b966c7ed51
 
 ###
-POST http://localhost:3000/api/users/login
+PATCH  http://localhost:3000/api/activity/6329a40782cf79e0c52a580a
 Content-Type: application/json
 
 
 {
-"username":"javadroidew",
+"name":"javadroidew",
 
-   "password":"string223@"
+   "project":"string223@"
 }
 
 ###
-POST http://localhost:3000/api/users
+GET  http://localhost:3000/api/users
 Content-Type: application/json
 
 {
